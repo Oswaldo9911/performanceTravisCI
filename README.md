@@ -1,21 +1,9 @@
-# JMeter Bootstrap
-
-[![Build Status](https://travis-ci.org/cfpb/jmeter-bootstrap.png)](https://travis-ci.org/cfpb/jmeter-bootstrap)
-
-Downloads [JMeter](http://jmeter.apache.org/) and [JMeter plugins](http://jmeter-plugins.org/) and demonstrates usage via examples. Suitable for use as a submodule in other projects that contain JMeter load tests
+# JMeter - TravisCI
 
 ## Dependencies
 
- - Python 2.7 to install JMeter
- - Java 1.5+ to run JMeter
-
-## Why?
-
-To encourage the creation and maintenance of load tests, we seek to reduce friction in the getting-started process.
-
-Working with multiple people and projects on load testing, the need became apparent for a simple way to set up JMeter with Plugins, include sample tests, and promote best practices.
-A project such as this can shorten the time to get other developers started. In addition, it simplifies load test job configuration in a continuous integration environment.
-
+ - Python 2.7 to install JMeter 5.1
+ - Java 1.7+ to run JMeter
 
 ## Install JMeter and JMeter plugins
 
@@ -28,16 +16,8 @@ The installer will also install several JMeter Plugins, which can be used direct
 ## Open Tests in JMeter
 
 ```
-apache-jmeter-3.0/bin/jmeter.sh -t tests/my_test.jmx
+apache-jmeter-5.1/bin/jmeter.sh -t tests/test.jmx
 ```
-
-This will load the JMeter GUI. This very simple test hits http://localhost 1 time, with 1 user
-
-- Run the tests with Command-R
-- See results by clicking in any of the Graph or Tree nodes
-- Stop tests with Command-period
-- Clear results with Command-E
-
 ## Running Headless Tests
 
 Especially in a continuous integration server, you'll want to run JMeter tests "headlessly", i.e. without a graphical user interface.
@@ -53,27 +33,6 @@ Let's break this down:
 - `-p tests/jmeter.properties` is the properties file to use when running the test (more on properties later)
 - `-t tests/my_test.jmx` is the test to run
 - `-n -l results/my_test.jtl` tells JMeter to run in non-gui mode and provides the path where JMeter will write the test results.
-
-### Warning: JMeter logging and results **appends**
-
-When specifying a log file or .jtl output file, be aware that JMeter appends, not overwrites.
-
-Consequently, when setting up Jenkins jobs or even running headless tests in a terminal, you should always remove those files prior to a test run, as the examples above show
-
-
-## Generating Graphs from .jtl Results
-
-One attractive feature of the JMeter plugins is the ability to generate graphs from the `.jtl` test results. Follow the "Graphs" links from the [JMeter Plugins wiki](http://jmeter-plugins.org/wiki/Start/)
-
-After running JMeter headlessly and generating a `.jtl` file, use `bin/generate_files_from_jtl.sh` to emit an aggregate .csv as well as .png files for useful graphs derived from the test results.
-
-Continuing with the example above, where you output a file named `my_test.jtl`, you can generate graphs like so:
-
-```
-$ bin/generate_files_from_jtl.sh my_test
-```
-
-Note that `my_test` is the prefix for your `results/my_test.jtl` file. If you had emitted a `.jtl` file named `lollipop.jtl`, you'd run `bin/generate_files_from_jtl.sh lollipop`
 
 ## Running tests with Parameters
 
