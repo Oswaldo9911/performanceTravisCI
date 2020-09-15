@@ -7,7 +7,7 @@ class JMeterInstaller(object):
         self.jmeter_version = "5.1"
         self.jmeter_dir = "apache-jmeter-%s/" % self.jmeter_version
         self.download_dir = tempfile.mkdtemp() + "/"
-        self.hashes = {"jmeter.zip": "197ec833318efadac7bc6553a926d2026eb132c1",
+        self.hashes = {"jmeter.zip": "6ddfd41ce80d0dc7cceef0e0f10a1092038722a6",
                        "jmp-standard.zip": "5df124bc039a3cef291a3e9054110a1ff1ae8441",
                        "jmp-extras.zip": "1f6ac7c3200a5d9f42f55217bf0c287fdbba485c",
                        "jmp-extraslibs.zip": "1087fdf9506ecfed202bea7625a227f6bdc14918"}
