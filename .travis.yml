@@ -9,7 +9,7 @@ script:
   - nosetests -s
   - rm -rf results && mkdir results
   - chmod -R 777 ./
-  - apache-jmeter-5.1/bin/jmeter.sh -j results/jmeter.log -p tests/jmeter.properties -t tests/my_test_with_parameters.jmx -n -l results/my_test_with_parameters.jtl -Jserver=google.com
-  - bin/generate_files_from_jtl.sh my_test_with_parameters
-notifications:
-  slack: lendingfront:AUFyTKKUAyVMw3cG3un8Y0LY
+  - apache-jmeter-5.1/bin/jmeter.sh -j results/jmeter.log -p tests/jmeter.properties -t tests/calculator.jmx -n -l results/calculator.jtl
+  - bin/generate_files_from_jtl.sh
+#notifications:
+  #slack: lendingfront:AUFyTKKUAyVMw3cG3un8Y0LY
