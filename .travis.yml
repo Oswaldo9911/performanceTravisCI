@@ -21,9 +21,9 @@ deploy:
   secret_access_key: "${{ secrets.AWS_KEY }}"
   bucket: "lf-automated-tests-framework"
   print: $TRAVIS_BUILD_DIR
-  source_dir: "/home/travis/build/Oswaldo9911/performanceTravisCI/results/JMeterReport"
-  dest_dir: performance/
-  
+  local_dir: build/Oswaldo9911/performanceTravisCI/results/JMeterReport
+  upload-dir: performance/
+
 notifications:
   slack:
     - rooms:
