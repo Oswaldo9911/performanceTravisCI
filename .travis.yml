@@ -22,6 +22,7 @@ deploy:
   bucket: "lf-automated-tests-framework"
   local_dir: /home/travis/build/Oswaldo9911/performanceTravisCI/results/JMeterReport
   upload-dir: performance/
+  skip_cleanup: true
 
 notifications:
   slack: lendingfront:AUFyTKKUAyVMw3cG3un8Y0LY
