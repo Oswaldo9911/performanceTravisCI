@@ -9,7 +9,7 @@ script:
   - nosetests -s
   - rm -rf results && mkdir results
   - chmod -R 777 ./
-  - apache-jmeter-5.1/bin/jmeter.sh -Jjmeter.save.saveservice.output_format=xml -j results/jmeter.log -p tests/jmeter.properties -t tests/calculator.jmx -n -l results/calculator.csv
+  - apache-jmeter-5.1/bin/jmeter.sh -Jjmeter.save.saveservice.output_format=xml -j results/jmeter.log -p tests/user.properties -t tests/calculator.jmx -n -l results/calculator.csv
  # - home/travis/build/Oswaldo9911/performanceTravisCI/apache-jmeter-5.1/bin
   - rm -rf results/JMeterReport && mkdir results/JMeterReport
   - apache-jmeter-5.1/bin/jmeter.sh -g results/calculator.csv -o results/JMeterReport
