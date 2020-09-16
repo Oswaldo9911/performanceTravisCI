@@ -28,7 +28,7 @@ deploy:
 notifications:
   slack:
     - rooms:
-        - $Lending:$Lending_Key#aut-team
+        - travis encrypt $Lending:$Lending_Key#aut-team
       on_success: never
       on_failure: always
       template:
