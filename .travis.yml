@@ -10,6 +10,6 @@ script:
   - rm -rf results && mkdir results
   - chmod -R 777 ./
   - apache-jmeter-5.1/bin/jmeter.sh -j results/jmeter.log -p tests/jmeter.properties -t tests/calculator.jmx -n -l results/calculator.jtl
-#  - bin/generate_files_from_jtl.sh
+  - bin/generate_files_from_jtl.sh
 #notifications:
   #slack: lendingfront:AUFyTKKUAyVMw3cG3un8Y0LY
