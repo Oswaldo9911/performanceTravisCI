@@ -21,7 +21,7 @@ deploy:
   secret_access_key: $AWS_ACCESS_KEY
   bucket: "lf-automated-tests-framework"
   local_dir: /home/travis/build/Oswaldo9911/performanceTravisCI/results/JMeterReport
-  upload-dir: performance
+  upload_dir: performance
   skip_cleanup: true
   acl: public_read
 
