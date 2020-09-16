@@ -28,7 +28,7 @@ deploy:
 notifications:
   slack:
     - rooms:
-        - lendingfront:AUFyTKKUAyVMw3cG3un8Y0LY#aut-team
+        - $Lending:$Lending_Key#aut-team
       on_success: never
       on_failure: always
       template:
