@@ -28,8 +28,6 @@ deploy:
 notifications:
   slack:
     - rooms:
-        - travis encrypt $Lending:$Lending_Key#aut-team
+        - lendingfront:AUFyTKKUAyVMw3cG3un8Y0LY#aut-team
       on_success: never
       on_failure: always
-      template:
-        - "Results Performance Test : lp-search-consult (<https://lf-automated-tests-framework.s3.amazonaws.com/performance/index.html|log>) by %{author} %{result} in %{duration}"
