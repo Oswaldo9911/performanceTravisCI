@@ -2,9 +2,20 @@ language: python
 python:
   - "2.7"
 env: JMETER_PATH=./
+
 before_script:
   - chmod +x bin/generate_files_from_jtl.sh
   - chmod +x bin/JMeterInstaller.py
+
+deploy:
+  provider: s3
+  access_key_id: "AKIAJUFXXPQQYPNDTRBA"
+  secret_access_key: "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"
+  bucket: "lf-automated-tests-framework"
+  print: $TRAVIS_BUILD_DIR
+  source_dir: "/home/travis/build/Oswaldo9911/performanceTravisCI/results/JMeterReport"
+  dest_dir: performance/
+
 script:
   - nosetests -s
   - rm -rf results && mkdir results
@@ -17,7 +28,4 @@ notifications:
   slack: lendingfront:AUFyTKKUAyVMw3cG3un8Y0LY
   irc:
     template:
-      - "%{repository_slug}#%{build_number} (%{branch} - %{commit} : %{author}): %{message}"
-      - "Change view : %{compare_url}"
-      - "Build details : %{build_url}"
-      - "Report: pending"
+      - "Test Executed Successfully, Report: \n https://lf-automated-tests-framework.s3.amazonaws.com/performance/index.html"
