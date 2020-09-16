@@ -26,4 +26,10 @@ deploy:
   acl: public_read
 
 notifications:
-  slack: lendingfront:AUFyTKKUAyVMw3cG3un8Y0LY
+  slack:
+    - rooms:
+        - lendingfront:AUFyTKKUAyVMw3cG3un8Y0LY
+      on_success: never
+      on_failure: always
+      template:
+        - "Results Performance Test : lp-search-consult <https://lf-automated-tests-framework.s3.amazonaws.com/performance/index.html|(log)>"
