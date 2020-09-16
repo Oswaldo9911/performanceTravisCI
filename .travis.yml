@@ -13,5 +13,10 @@ script:
  # - home/travis/build/Oswaldo9911/performanceTravisCI/apache-jmeter-5.1/bin
   - rm -rf results/JMeterReport && mkdir results/JMeterReport
   - apache-jmeter-5.1/bin/jmeter.sh -g results/calculator.csv -o results/JMeterReport
-#notifications:
-  #slack: lendingfront:AUFyTKKUAyVMw3cG3un8Y0LY
+notifications:
+  slack: lendingfront:AUFyTKKUAyVMw3cG3un8Y0LY
+  irc:
+    template:
+      - "%{repository_slug}#%{build_number} (%{branch} - %{commit} : %{author}): %{message}"
+      - "Change view : %{compare_url}"
+      - "Build details : %{build_url}"
