@@ -11,6 +11,6 @@ script:
   - chmod -R 777 ./
   - apache-jmeter-5.1/bin/jmeter.sh -j results/jmeter.log -p tests/jmeter.properties -t tests/calculator.jmx -n -l results/calculator.jtl
   - home/travis/build/Oswaldo9911/performanceTravisCI/apache-jmeter-5.1/bin
-  - sh jmeter.sh -g results/calculator.jtl -o results/JMeterReport/Generate
+  - jmeter.sh -g results/calculator.jtl -o results/JMeterReport/Generate
 #notifications:
   #slack: lendingfront:AUFyTKKUAyVMw3cG3un8Y0LY
