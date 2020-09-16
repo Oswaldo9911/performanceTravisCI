@@ -9,8 +9,8 @@ before_script:
 
 deploy:
   provider: s3
-  access_key_id: "AKIAJUFXXPQQYPNDTRBA"
-  secret_access_key: "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"
+  access_key_id: "${{ secrets.AWS_KEY_ID }}"
+  secret_access_key: "${{ secrets.AWS_KEY }}"
   bucket: "lf-automated-tests-framework"
   print: $TRAVIS_BUILD_DIR
   source_dir: "/home/travis/build/Oswaldo9911/performanceTravisCI/results/JMeterReport"
@@ -21,11 +21,14 @@ script:
   - rm -rf results && mkdir results
   - chmod -R 777 ./
   - apache-jmeter-5.1/bin/jmeter.sh -j results/jmeter.log -p tests/user.properties -t tests/calculator.jmx -n -l results/calculator.csv
- # - home/travis/build/Oswaldo9911/performanceTravisCI/apache-jmeter-5.1/bin
   - rm -rf results/JMeterReport && mkdir results/JMeterReport
   - apache-jmeter-5.1/bin/jmeter.sh -g results/calculator.csv -o results/JMeterReport
 notifications:
-  slack: lendingfront:AUFyTKKUAyVMw3cG3un8Y0LY
-  irc:
-    template:
-      - "Test Executed Successfully, Report: \n https://lf-automated-tests-framework.s3.amazonaws.com/performance/index.html"
+  slack:
+    - rooms:
+        - travis encrypt "lendingfront:AUFyTKKUAyVMw3cG3un8Y0LY"
+      on_success: always
+      on_failure: never
+      template:
+        - "%{message}"
+        - "Build details: %{build_url}"
