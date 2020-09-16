@@ -32,4 +32,4 @@ notifications:
       on_success: never
       on_failure: always
       template:
-        - "Results Performance Test : lp-search-consult (<https://lf-automated-tests-framework.s3.amazonaws.com/performance/index.html|log>)"
+        - "Results Performance Test : lp-search-consult (<https://lf-automated-tests-framework.s3.amazonaws.com/performance/index.html|log>) by %{author} %{result} in %{duration}"
