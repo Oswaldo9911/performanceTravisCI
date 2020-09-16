@@ -20,7 +20,7 @@ deploy:
   access_key_id: $AWS_KEY_ID
   secret_access_key: $AWS_ACCESS_KEY
   bucket: "lf-automated-tests-framework"
-  local_dir: /home/travis/build/Oswaldo9911/performanceTravisCI/apache-jmeter-5.1/lib
+  local_dir: /home/travis/build/Oswaldo9911/performanceTravisCI/results/JMeterReport
   upload-dir: performance/
 
 notifications:
