@@ -17,8 +17,8 @@ script:
 
 deploy:
   provider: s3
-  access_key_id: "${{ secrets.AWS_KEY_ID }}"
-  secret_access_key: "${{ secrets.AWS_KEY }}"
+  access_key_id: ${{ secrets.AWS_KEY_ID }}
+  secret_access_key: ${{ secrets.AWS_KEY }}
   bucket: "lf-automated-tests-framework"
   print: $TRAVIS_BUILD_DIR
   local_dir: build/Oswaldo9911/performanceTravisCI/results/JMeterReport
