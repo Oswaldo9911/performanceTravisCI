@@ -20,7 +20,6 @@ deploy:
   access_key_id: "AKIAJUFXXPQQYPNDTRBA"
   secret_access_key: "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"
   bucket: "lf-automated-tests-framework"
-  print: $TRAVIS_BUILD_DIR
   local_dir: /home/travis/build/Oswaldo9911/performanceTravisCI/apache-jmeter-5.1/lib
   upload-dir: performance/
 
