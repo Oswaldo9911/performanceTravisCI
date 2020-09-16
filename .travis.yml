@@ -24,10 +24,4 @@ deploy:
   upload-dir: performance/
 
 notifications:
-  slack:
-    - rooms:
-        - travis encrypt lendingfront:AUFyTKKUAyVMw3cG3un8Y0LY
-      on_success: always
-      on_failure: never
-      template:
-        - "Build details: %{build_url}"
+  slack: lendingfront:AUFyTKKUAyVMw3cG3un8Y0LY
