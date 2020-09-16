@@ -7,6 +7,14 @@ before_script:
   - chmod +x bin/generate_files_from_jtl.sh
   - chmod +x bin/JMeterInstaller.py
 
+script:
+  - nosetests -s
+  - rm -rf results && mkdir results
+  - chmod -R 777 ./
+  - apache-jmeter-5.1/bin/jmeter.sh -j results/jmeter.log -p tests/user.properties -t tests/calculator.jmx -n -l results/calculator.csv
+  - rm -rf results/JMeterReport && mkdir results/JMeterReport
+  - apache-jmeter-5.1/bin/jmeter.sh -g results/calculator.csv -o results/JMeterReport
+
 deploy:
   provider: s3
   access_key_id: "${{ secrets.AWS_KEY_ID }}"
@@ -15,14 +23,7 @@ deploy:
   print: $TRAVIS_BUILD_DIR
   source_dir: "/home/travis/build/Oswaldo9911/performanceTravisCI/results/JMeterReport"
   dest_dir: performance/
-
-script:
-  - nosetests -s
-  - rm -rf results && mkdir results
-  - chmod -R 777 ./
-  - apache-jmeter-5.1/bin/jmeter.sh -j results/jmeter.log -p tests/user.properties -t tests/calculator.jmx -n -l results/calculator.csv
-  - rm -rf results/JMeterReport && mkdir results/JMeterReport
-  - apache-jmeter-5.1/bin/jmeter.sh -g results/calculator.csv -o results/JMeterReport
+  
 notifications:
   slack:
     - rooms:
