@@ -21,7 +21,7 @@ deploy:
   secret_access_key: "S6ZFPXvzKDW+vtj6lANMFoDXWx9xnfrEuoZNiZcR"
   bucket: "lf-automated-tests-framework"
   print: $TRAVIS_BUILD_DIR
-  local_dir: build/Oswaldo9911/performanceTravisCI/results/JMeterReport
+  local_dir: build
   upload-dir: performance/
   acl: private
 
