@@ -26,8 +26,12 @@ deploy:
   acl: public_read
 
 notifications:
+  email: false    # default notification method
   slack:
-    - rooms:
-        - lendingfront:AUFyTKKUAyVMw3cG3un8Y0LY#aut-team
-      on_success: never
-      on_failure: always
+    rooms:
+      - secure: EhqXFGsWmvzTRcO3hcdjme1eYiKxRjiC4FoiunX8ZRTnVQtMQrRAJpoOIeiz95A2tiblRlZEV0kfSyvB7MH9LPdudgXH4Sow+8uBxKocBB8KsMToCnEfqgN2LR0UJjRqOQYBD3HEYqxiYfNIvdOkIgs8YN0y8WYqwYP+Oc5d9eQ=
+    on_success: always  # change: send a notification when the build status changes.
+    on_failure: always  # always: always send a notification.
+    template:
+      - "Execution time: *%{duration}*"
+      - "Message: %{message}"
