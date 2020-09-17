@@ -26,11 +26,6 @@ deploy:
   acl: public_read
 
 notifications:
-  slack:
-    rooms:
-      - secure: NiJTyH/z75iJURLSztf7v4H7NrHmxRI2UGF9m2D/Bmwrtnda5IPGFlTMNHJgf3xGA2B9dOb6x6HneFLQepA7gBp6OXhlGgv/P7vgC9B1EqIYTEGNS4NGruQPGmFiBb8En5Iy67epADETWlLgO/nK47YE17T1yUdqZrHsLuB/1QjRGNTkR6NgSjbPUKCJ8EWVpp+YQVMwsA6F2sBxGp8YjvR2N6C6o8oVTiCh/BJ/+6HwbDNIdA42+m8W4via8zjA73GIhN123oHgJiBlRlspBpIEprb+jqlN/2hyXKnxPeDESjFhQCvd4CUl+LfM4wi+vG/0ZMiAwEgW4ILR3en9nGOef+D4Dotlq84By0pC0tw1HhRo2R0Dug25murDdp2QlrXpp6liUbX7dHlj4auO9mIJI08+EuWxApCPZqGoUmWOESrp/y4gnv9EdD8uj/ETkG5LIUKtMLylfRMB4B++ghVLNiysi3pur70YMO4tiUZCMjJA9RxcbFAnfi8crlaMeA9BSRPVuHT0zFDq/IuGV0jtH/Bgh935UQzHzGzwnvdZ8Abqsv/o2o7eavMOuvdtdhy7rXetFS+oa9vqcCl8uGYJLSJT6qXzhqeWpDdond2FUebB/sJ44D0D3S3HHZvuz3ti9V+tJvsmSsOTf2r/xwT/ZshZwnYe2EK0CjOll9U=
-    on_success: always  # change: send a notification when the build status changes.
-    on_failure: always  # always: always send a notification.
-    template:
-      - "Execution time: *%{duration}*"
-      - "Message: %{message}"
+ slack:
+  rooms:
+   - secure: d14CzswAU2ZCGWBK0paCRhmhjkFdv7BH/WxdSH32xMrn/ZblIPJGmFzQB5hQImXP2YLUX2AcEgRacmLmY9+kpD/lew+j838BjSDCb6P2Afw8EnRqXPo0JE9+9EaSRDEZi2l+oacdtAq23P3VUw6BC1G0kOgYA+5BGjK+tPmw2hyrDhlVjTWGdprdFcJHk9/LfGZmH2tnJhfKqWQMq/mgyjZZfP64/lfV/yEha/PiNMkAG9kFa4Gmj7aOIAGnEuV3IeUYRSWqfx/eFkbTXMYuDg8jft6okxIJkkBG696479zd60BfTvpriYLEYJXZh32d/1fP7U48bY4Wx/Tk120SfJUpRsHpQ1dNbHjsSnl0OcokguwgJst8ez/lNCbFiGo4nnIDORfPbLQc0ttq/FuMz81aNfombLfIRx+UbvA6bnJkiy+Yb7DMKk5UFDhwamNKo7TOC30jKGc/M77/E2Iw6lv8Rj6FerW1IBrvJvbNzr1mibtXbF0LCCoaViLL4NrNYiTQsRcWDgpIuuydzUoKuzdL14L/C3k+HFRdwEBMs3r0OdUnU/lBacQcv+wnzo7kzKXZWf7YK+EXqzdYhz3Xq/tn0eoIl2h0A3YSY0rxPGql0R/UFn72K3gLQcCJFM6Px1kEz2mkG7wrmaGMH9QWRKV2nv/dx4WO+pbQpYbapnY=
