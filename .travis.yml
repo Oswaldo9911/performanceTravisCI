@@ -11,9 +11,9 @@ script:
   - nosetests -s
   - rm -rf results && mkdir results
   - chmod -R 777 ./
-  - apache-jmeter-5.1/bin/jmeter.sh -j results/jmeter.log -p tests/user.properties -t tests/calculator.jmx -n -l results/calculator.csv
+  - apache-jmeter-5.1/bin/jmeter.sh -j results/jmeter.log -p tests/user.properties -t tests/cloverConnection.jmx -n -l results/result.csv
   - rm -rf results/JMeterReport && mkdir results/JMeterReport
-  - apache-jmeter-5.1/bin/jmeter.sh -g results/calculator.csv -o results/JMeterReport
+  - apache-jmeter-5.1/bin/jmeter.sh -g results/result.csv -o results/JMeterReport
 
 notifications:
   slack:
