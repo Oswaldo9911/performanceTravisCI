@@ -11,7 +11,7 @@ script:
   - nosetests -s
   - rm -rf results && mkdir results
   - chmod -R 777 ./
-  - apache-jmeter-5.1/bin/jmeter.sh -j results/jmeter.log -p tests/jmeter.properties -t tests/lending_portal_with_parameters.jmx -n -l results/result.csv -Jserver=$URL_TEST -Jthreads=5 -JloopCount=1
+  - apache-jmeter-5.1/bin/jmeter.sh -j results/jmeter.log -p tests/user.properties -t tests/lending_portal_with_parameters.jmx -n -l results/result.csv -Jserver=$URL_TEST -Jthreads=5 -JloopCount=1
   - rm -rf results/JMeterReport && mkdir results/JMeterReport
   - apache-jmeter-5.1/bin/jmeter.sh -g results/result.csv -o results/JMeterReport
 
