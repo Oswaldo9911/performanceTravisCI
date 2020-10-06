@@ -22,7 +22,7 @@ notifications:
       on_success: always
       on_failure: change
       template:
-        - "Results Performance Test : lp-search-consult (<https://lf-automated-tests-framework.s3.amazonaws.com/performance/index.html|log>) by %{author} %{result} in %{duration}"
+        - "Results Performance Test Test : lp-search-consult (<https://lf-automated-tests-framework.s3.amazonaws.com/performance/index.html|log>) by %{author} %{result} in %{duration}"
 
 deploy:
   provider: s3
