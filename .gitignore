@@ -1,5 +1,8 @@
-results/
+tests/
+lending_portal.jmx
+clover_connection.jmx
 
+results/
 apache-jmeter*
 *.log
 *.jtl
