@@ -32,3 +32,8 @@ deploy:
   upload_dir: performance
   skip_cleanup: true
   acl: public_read
+
+matrix:
+  include:
+    - dist: bionic
+    - dist: xenial
