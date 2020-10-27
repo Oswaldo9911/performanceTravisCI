@@ -1,6 +1,7 @@
 tests/
 lending_portal.jmx
 clover_connection.jmx
+parther_portal.jmx
 
 results/
 apache-jmeter*
