@@ -1,13 +1,12 @@
 language: python
 python:
   - "2.7"
-env: JMETER_PATH=./
+#env: JMETER_PATH=./
 
 before_script:
   - chmod +x bin/JMeterInstaller.py
 
 script:
-  - nosetests -s
   - rm -rf results && mkdir results
   - chmod -R 777 ./
   - apache-jmeter-5.1/bin/jmeter.sh -j results/jmeter.log -p tests/user.properties -t tests/lending_portal_with_parameters.jmx -n -l results/result.csv -Jserver=$URL_TEST -Jtimeout=10000 -Jthreads=1 -JloopCount=1
