@@ -1,6 +1,6 @@
 ame: Caching with npm
 
-on: push
+on: workflow_dispatch
 
 jobs:
   build:
